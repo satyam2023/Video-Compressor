@@ -1,11 +1,30 @@
 package com.video
 
+import android.os.Build
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
 
 class MainActivity : ReactActivity() {
+
+  private val multiplePermissionId=14
+  private  val multiplePermissionNameList=if(Build.VERSION.SDK_INT >=33) {
+    arrayListOf(
+            android.Manifest.permission.READ_MEDIA_AUDIO,
+            android.Manifest.permission.READ_MEDIA_IMAGES,
+            android.Manifest.permission.READ_MEDIA_VIDEO,
+
+    )
+  }
+   else {
+    arrayListOf(
+            android.Manifest.permission.READ_EXTERNAL_STORAGE,
+            android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+    )
+
+  }
+
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule

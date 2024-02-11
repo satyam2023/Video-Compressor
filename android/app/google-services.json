@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "504291844729",
+    "project_id": "notification-320a6",
+    "storage_bucket": "notification-320a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504291844729:android:a0d26baed811c5088a2aa8",
+        "android_client_info": {
+          "package_name": "com.notificationproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuGVFhM8Bk_oplIMxFkfg8rx0FpdBsJ-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504291844729:android:616a1ebc934e270d8a2aa8",
+        "android_client_info": {
+          "package_name": "com.video"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuGVFhM8Bk_oplIMxFkfg8rx0FpdBsJ-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
