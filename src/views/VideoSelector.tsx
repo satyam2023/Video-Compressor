@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { View, Button, Text, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import DocumentPicker from 'react-native-document-picker';
 import { compressed } from '../utils/Compressor';
 import { getVideoMetaData } from 'react-native-compressor';
 import VideoMetadata from '../component/VideoMetadata';
-import { downloadImage } from '../utils/download';
+import { downloadVideo} from '../utils/download';
 
 
 const Video = () => {
@@ -22,10 +22,9 @@ const Video = () => {
       setVideoUri(res);
       setVideoSelectStatus(true);
       const metaData = await getVideoMetaData(res[0].fileCopyUri as any);
-console.log("Size before Compression:::",metaData);
-console.log("Video details:::",res);
+
     } catch (err) {
-      console.log(err);
+      
     }
   };
 
@@ -41,7 +40,7 @@ console.log("Video details:::",res);
       compressed(videoUri[0].fileCopyUri,videoUri[0].name,CompressedUrl);
     }
     else if(compressSelect && compressedVideoUri){
-      downloadImage(compressedVideoUri);
+      downloadVideo(compressedVideoUri);
       
     }
   }

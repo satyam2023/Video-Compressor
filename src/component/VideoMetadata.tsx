@@ -29,7 +29,7 @@ getting();
         Video Extension : {meta.extension} 
         </Text>
         <Text style={{color:'#FFFFFF',fontWeight:'600',fontSize:16}}>
-         Video Duration :  {meta.duration} 
+         Video Duration :  {meta.duration} Sec
         </Text>
         
     </View>:<ActivityIndicator color={'green'} size={'large'}/>

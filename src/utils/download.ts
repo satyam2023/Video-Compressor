@@ -1,25 +1,19 @@
 
-import React from 'react';
-import { Alert } from 'react-native';
-
-
 import RNFetchBlob from 'rn-fetch-blob';
-const downloadImage = async (url) => {
-    
-console.log("downloding started....")
+const downloadVideo = async (url:string) => {
+  
     
     let date = new Date();
     
-    let image_URL = url;
+    let Video_URL = url;
   
-    let ext = getExtention(image_URL);
+    let ext = getExtention(Video_URL) as any;
     ext = '.' + ext[0];
     const {config, fs} = RNFetchBlob;
     let PictureDir = fs.dirs.PictureDir;
-    let options = {
+    let options =  {
       fileCache: true,
       addAndroidDownloads: {
-      
         useDownloadManager: true,
         notification: true,
         path:
@@ -30,17 +24,19 @@ console.log("downloding started....")
         description: 'Video',
       },
     };
+    try{
     await config(options)
-      .fetch('GET', image_URL)
+      .fetch('GET', Video_URL)
       .then(res => {
-       
-        console.log('res -> ', JSON.stringify(res));
-      Alert.alert('Video Downloaded Successfully.');
       });
+    }
+      catch(error){
+      }
   };
 
-  const getExtention = filename => {
+  const getExtention = (filename:any) => {
+    
     return /[.]/.exec(filename) ? /[^.]+$/.exec(filename) : undefined;
   };
 
-  export {downloadImage};
+  export {downloadVideo};
